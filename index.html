@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Get Well Soon Aunty Ji</title>
+
+<style>
+/* Animated background */
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(-45deg,#ffdde1,#fbc2eb,#a18cd1,#84fab0);
+    background-size:400% 400%;
+    animation:bgChange 12s ease infinite;
+    overflow:hidden;
+}
+
+@keyframes bgChange{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Falling flowers */
+.flower{
+    position:absolute;
+    top:-50px;
+    font-size:26px;
+    animation:fall linear infinite;
+    opacity:.8;
+}
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+    }
+}
+.flower:nth-child(1){left:10%;animation-duration:8s;}
+.flower:nth-child(2){left:25%;animation-duration:10s;}
+.flower:nth-child(3){left:40%;animation-duration:9s;}
+.flower:nth-child(4){left:60%;animation-duration:11s;}
+.flower:nth-child(5){left:75%;animation-duration:8s;}
+.flower:nth-child(6){left:90%;animation-duration:12s;}
+
+/* Wrapper */
+.wrapper{
+    position:relative;
+    width:420px;
+    height:320px;
+    z-index:2;
+}
+
+/* Envelope */
+.envelope{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:210px;
+    background:#f48fb1;
+    border-radius:0 0 25px 25px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+.envelope::before,
+.envelope::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    clip-path:polygon(0 0,50% 50%,0 100%);
+    background:#f06292;
+}
+.envelope::after{
+    right:0;
+    clip-path:polygon(100% 0,50% 50%,100% 100%);
+    background:#ec407a;
+}
+
+/* Flap */
+.flap{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background:#e91e63;
+    clip-path:polygon(0 0,100% 0,50% 55%);
+    transform-origin:top;
+    animation:openFlap 2s forwards;
+    z-index:3;
+}
+@keyframes openFlap{
+    to{transform:rotateX(180deg);}
+}
+
+/* Card */
+.card{
+    position:absolute;
+    bottom:-230px;
+    left:50%;
+    transform:translateX(-50%);
+    width:360px;
+    background:linear-gradient(180deg,#fff,#fff0f7);
+    border-radius:25px;
+    padding:30px 25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    animation:cardOut 2.3s ease forwards;
+    animation-delay:1.6s;
+    z-index:2;
+}
+@keyframes cardOut{
+    to{bottom:25px;}
+}
+
+h2{
+    color:#d63384;
+    margin:10px 0;
+}
+p{
+    font-size:16px;
+    line-height:1.7;
+    color:#444;
+}
+.special{
+    color:#c2185b;
+    font-style:italic;
+    font-weight:600;
+}
+
+.heart{
+    font-size:42px;
+    animation:pulse 1.3s infinite;
+}
+@keyframes pulse{
+    50%{transform:scale(1.4);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Flowers / Confetti -->
+<div class="flower">🌸</div>
+<div class="flower">🌼</div>
+<div class="flower">🌷</div>
+<div class="flower">🌺</div>
+<div class="flower">🌸</div>
+<div class="flower">✨</div>
+
+<div class="wrapper">
+
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h2>Dear Aunty ji</h2>
+
+        <p>
+            Hope you are feeling a little better every day
+            I am sending you lots of love,strength and 
+            Posivite thoughts and energy.
+            May you recover quickly and feel healthy
+            again very soon.✨
+
+        </p>
+
+        <p class="special">
+            Honsetly I really miss your homemade gajar ka halwa 
+            made by your hand.😊 
+        </p>
+
+
+        <p><b>Take care & get well soon 💐</b></p>
+    </div>
+
+    <div class="envelope">
+        <div class="flap"></div>
+    </div>
+
+</body>
+
+</html>
